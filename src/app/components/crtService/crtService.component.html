@@ -1,0 +1,33 @@
+<div>
+  <h1>angular post request</h1>
+  <div>
+ @if (loading) {
+    <p>loading...</p>
+ }@else{
+    <form (submit)="createPost()">
+        <div class="mt-3">
+          <label>Title</label>
+          <input type="text" [(ngModel)]="postData.title" name="title" required class="border border-gray-500"/>
+        </div>
+        <div class="mt-3">
+          <label>Body</label>
+          <input type="text" [(ngModel)]="postData.body" name="body" class="border border-gray-500" required/>
+        </div>
+        <button type="submit" class="bg-gray-300 border border-green-200 rounded-xl px-5 py-2 mt-5">Submit</button>
+      </form>
+ }
+  </div>
+  <div>
+    @if(loading){
+        <p>loading...</p>
+    }@else{
+        @for (i of data; track $index) {
+            <div class="mt-5 border border-gray-500 bg-gray-200 p-2 rounded-xl">
+                <h1>{{i.title}}</h1>
+                <p>{{i.body}}</p>
+            </div>
+        }
+    }
+ 
+</div>
+</div>

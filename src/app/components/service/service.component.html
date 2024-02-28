@@ -1,0 +1,13 @@
+<div>
+    @if(loading){
+        <p>loading...</p>
+    }@else{
+        @for (i of data; track $index) {
+            <div class="mt-5 border border-gray-500 bg-gray-200 p-2 rounded-xl">
+                <h1>{{i.title}}</h1>
+                <p>{{i.body}}</p>
+            </div>
+        }
+    }
+ 
+</div>
